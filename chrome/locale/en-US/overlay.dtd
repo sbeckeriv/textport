@@ -1,0 +1,8 @@
+<!ENTITY textport.label "Your localized menuitem">
+<!ENTITY textportContext.label "Your Menuitem">
+<!ENTITY textportContext.accesskey "Y">
+<!ENTITY textportToolbarButton.label "Your Toolbar Button">
+<!ENTITY textportToolbarButton.tooltip "This is your toolbar button!">
+<!ENTITY textportSidebar.label "Your Sidebar">
+<!ENTITY textportToolbar.name  "example">
+<!ENTITY textportToolbar.label "This is an example toolbar. You can hide it under View &gt; toolbars &gt; &textportToolbar.name;">

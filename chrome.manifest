@@ -1,0 +1,5 @@
+overlay chrome://messenger/content/mailWindowOverlay.xul chrome://textport/content/overlay.xul
+content   textport                 chrome/content/
+skin      textport   classic/1.0   chrome/skin/
+locale    textport   en-US         chrome/locale/en-US/
+

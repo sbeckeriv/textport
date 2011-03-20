@@ -1,0 +1,65 @@
+TEXTPORT
+
+Plugin to thunderbird that allows you to export your contact 
+information or message bodies to text files. This is enabled
+in two menus. The first is the folder level menu. This will
+preform the action on evey message in the folder. For larger
+folders this can take a long time. The second is in the 
+message panel leve. Highlight one or more messages to
+preform the actions on.
+
+Export contacts
+This produced a csv file with in the format of 
+folder,contact,name,email
+Each person was on the From,To,CC and BCC will
+have a line in the file. These files are saved
+to ~/contacts.
+
+Export messages
+This goes over each message and produces a file 
+like 
+From:
+To:
+CC:
+BCC:
+Subject:
+Folder:
+___::EMAIL ID::DATE IN MILLSECONDS::___
+BODY
+___::EMAIL ID::DATE IN MILLSECONDS::___
+
+These files are saved by default in 
+~/mail/DATE_email_id.txt
+
+Configurations
+
+There are two settings
+
+1) All emails in one file.
+This will produce one file for all the emails selected.
+The file name will be the time in seconds of when it was
+writen.
+
+2) The ejs template. 
+Each message is render in an EJS template. http://embeddedjs.com/
+The template has access to 
+h: This is the header object. https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDBHdr
+body: Is the text of the body
+folder_name: A string with a the name or messages-NAME
+m: m is iffy. dont use it. 
+Default template
+From:<%= h.author %>\nTo:<%= h.recipients %>\nCC:<%= h.ccList %>\nBCC:<%= h.bccList %>\nSubject:<%= h.subject %>\nFolder:<%=folder_name%>\n___::<%= h.messageId%>::<%=h.date%>::___\n<%= body %>\n___::<%= h.messageId%>::<%=h.date%>::___\n
+
+When you enter your template you do not need to enter "\n" 
+just hit enter.  To use the default template just erase 
+everthing in the setting
+
+Example:
+Just the body
+<%= body %>
+
+Just the contacts (untested)
+<% var contacts %>
+<% if(h.recipients.length>0){contacts+=h.recipients} %>
+<% if(h.author.length>0){contacts+= ","+h.author} %>
+<%= contacts %>

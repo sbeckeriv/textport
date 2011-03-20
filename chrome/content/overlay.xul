@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://textport/locale/overlay.dtd">
+
+<overlay id="textportOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript" src="chrome://textport/content/ejs.js"/>
+
+  <script type="application/x-javascript" src="chrome://textport/content/overlay.js"/>
+
+  <popup id="folderPaneContext" >
+    <menuitem id="folderPaneContext-tport-text" 
+      label="Texport- Message Text"
+      insertafter="folderPaneContext-compact"
+      oncommand="textport.saveMessages();"/> 
+    <menuitem id="folderPaneContext-tport-contacts" 
+      label="Texport- Csv Contacts"
+      insertafter="folderPaneContext-compact"
+      oncommand="textport.saveCSVContacts();"/> 
+  </popup> 
+  <popup id="mailContext">
+    <menuitem id="mailContext-tport-contacts" 
+      label="Texport- Csv Contacts"
+      oncommand="textport.csvMessages();"/> 
+    <menuitem id="mailContext-tport-text" 
+      label="Texport- Message Text"
+      oncommand="textport.saveSelectedMessages();"/> 
+  </popup>
+</overlay>
