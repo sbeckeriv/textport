@@ -1,12 +1,17 @@
 TEXTPORT
 
+**IMPORTANT** 
+You need to create 
+~/contacts or ~/mail before you export any data
+Its in my TODO
+
 Plugin to thunderbird that allows you to export your contact 
 information or message bodies to text files. This is enabled
 in two menus. The first is the folder level menu. This will
 preform the action on evey message in the folder. For larger
-folders this can take a long time. The second is in the 
-message panel leve. Highlight one or more messages to
-preform the actions on.
+folders this can take a long time. I exported 19k message in 
+2 hours. The second is in the message panel level. Highlight 
+one or more messages to preform the actions on.
 
 Export contacts
 This produced a csv file with in the format of 
@@ -15,7 +20,7 @@ Each person was on the From,To,CC and BCC will
 have a line in the file. These files are saved
 to ~/contacts.
 
-Export messages
+Export messages:
 This goes over each message and produces a file 
 like 
 From:
