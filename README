@@ -1,9 +1,8 @@
 TEXTPORT
 
 **IMPORTANT** 
-You need to create 
-~/contacts or ~/mail before you export any data
-Its in my TODO
+Untested on windows. Check Tools-> error console. Try 
+changing the save dir.
 
 Plugin to thunderbird that allows you to export your contact 
 information or message bodies to text files. This is enabled
@@ -38,14 +37,20 @@ These files are saved by default in
 
 Configurations
 
-There are two settings
+There are four settings
 
 1) All emails in one file.
 This will produce one file for all the emails selected.
 The file name will be the time in seconds of when it was
 writen.
 
-2) The ejs template. 
+2)Save messages to:
+The folder where messages should be saved.
+
+3)Save contacts to:
+The folder where contacts should be saved.
+
+4) The ejs template. 
 Each message is render in an EJS template. http://embeddedjs.com/
 The template has access to 
 h: This is the header object. https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIMsgDBHdr

@@ -8,8 +8,13 @@
       <preference id="intpref1" name="extensions.textport.intpref" type="int"/>
       <preference id="stringpref1" name="extensions.textport.stringpref" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
       <preference id="template" name="extensions.textport.template" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
+      <preference id="messages_path" name="extensions.textport.messages_path" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
+      <preference id="contacts_path" name="extensions.textport.contacts_path" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
     </preferences>
     <checkbox id="checkboolpref" preference="oneMessageFile" label="&checkboolpref.label;" accesskey="&checkboolpref.accesskey;"/>
+    <label control="messages_path">Save Messages To(folder):</label><textbox id="textstringpref" preference="messages_path"/>
+    <label control="contacts_path">Save Contacts To(folder):</label><textbox id="textstringpref" preference="contacts_path"/>
+    
     <label control="template">EJS export template</label><textbox id="textstringpref" preference="template" rows="10" cols="100" multiline="true"/>
   </prefpane>
 </prefwindow>

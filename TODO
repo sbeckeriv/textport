@@ -1,7 +1,5 @@
 Sign and host package
 add update url
 add localization
-create dir if it does not exist
-create configurable output folder
 add ejs template error alert
 easter egg
