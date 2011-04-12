@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-  <Description about="urn:mozilla:install-manifest">
-    <em:id>becker@deathbyescalator.com</em:id>
-    <em:type>2</em:type>
-    <em:name>Textport</em:name>
-    <em:version>0.0.2</em:version>
-    <em:creator>Becker</em:creator>
-    <em:contributor></em:contributor>
-    <em:description>Export text</em:description>
-    <em:aboutURL>chrome://textport/content/about.xul</em:aboutURL>
-    <em:optionsURL>chrome://textport/content/options.xul</em:optionsURL>
-    <em:targetApplication>
-      <Description>
-        <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id> <!-- Thunderbird -->
-        <em:minVersion>3.1</em:minVersion>
-        <em:maxVersion>3.3a4pre</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-  </Description>
-</RDF>
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="becker@deathbyescalator.com"
+                   em:name="Textport"
+                   em:version="0.0.4"
+                   em:creator="Becker"
+                   em:description="Export text"
+                   em:optionsURL="chrome://textport/content/options.xul"
+                   em:aboutURL="chrome://textport/content/about.xul">
+    <em:targetApplication RDF:resource="rdf:#$N6y.23"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$N6y.23"
+                   em:id="{3550f703-e582-4d05-9a08-453d09bdfdc6}"
+                   em:minVersion="3.1"
+                   em:maxVersion="3.3a4pre" />
+</RDF:RDF>
