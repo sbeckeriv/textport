@@ -1,4 +1,4 @@
-pref("extensions.textport.oneMesageFile", false);
+pref("extensions.textport.oneMessageFile", false);
 pref("extensions.textport.template", "");
 pref("extensions.textport.contacts_path", "");
 pref("extensions.textport.messages_path", "");
