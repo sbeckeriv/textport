@@ -1,17 +1,17 @@
 var textport = {
   _template: null,
   log: function(message) {
-      if (true) {
-        var con = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
-        con.logStringMessage(message);
-      }
-    },
+    if (true) {
+      var con = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
+      con.logStringMessage(message);
+    }
+  },
 
   template: function(){
 
-    return textport._template || "From:<%= h.author %>\nTo:<%= h.recipients %>\nCC:<%= h.ccList %>\nBCC:<%= h.bccList %>\nSubject:<%= h.subject %>\nFolder:<%=folder_name%>\n___::<%= h.messageId%>::<%=h.date%>::___\n<%= body %>\n___::<%= h.messageId%>::<%=h.date%>::___\n";
+              return textport._template || "From:<%= h.author %>\nTo:<%= h.recipients %>\nCC:<%= h.ccList %>\nBCC:<%= h.bccList %>\nSubject:<%= h.subject %>\nFolder:<%=folder_name%>\n___::<%= h.messageId%>::<%=h.date%>::___\n<%= body %>\n___::<%= h.messageId%>::<%=h.date%>::___\n";
 
-  },
+            },
   homeDir: function(){
              var dirService = Components.classes["@mozilla.org/file/directory_service;1"].
                getService(Components.interfaces.nsIProperties); 
@@ -109,7 +109,7 @@ var textport = {
           },
   saveSelectedMessages: function(){
                           textport.log("saveSelectedMessages")
-                          var messages =  gFolderDisplay.selectedMessages;
+                            var messages =  gFolderDisplay.selectedMessages;
                           var i;
                           var folder = {name:"messages"} ;
                           var name;
@@ -130,7 +130,7 @@ var textport = {
                               try{
                                 file = Components.classes["@mozilla.org/file/local;1"].
                                   createInstance(Components.interfaces.nsILocalFile);
-                                file.initWithPath(textport.homeDir()+textport.fileSlash()+"messages"+textport.fileSlash()+h.date+"_"+h.messageId+".txt");
+                                file.initWithPath(saveDir+textport.fileSlash()+h.date+"_"+h.messageId+".txt");
                                 textport.saveToFile(file,message);
                               }catch(e){
                                 debugger
@@ -146,7 +146,7 @@ var textport = {
                             textport.saveToFile(file,master_file);
                           }
                           textport.log("saveSelectedMessages:end")
-                          
+
                         },
   saveMessages: function(){
                   var folder_list = GetSelectedMsgFolders();
@@ -300,4 +300,3 @@ var textport = {
 };
 
 window.addEventListener("load", function () { textport.onLoad(); }, false);
-
